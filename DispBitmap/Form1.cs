@@ -98,7 +98,9 @@ namespace DispBitmap
                 string p = li.ToString();
                 ImgToArr(p);
             }
-            File.WriteAllBytes("ee.bin", buff);
+            byte[] tmpB = new byte[ind];
+            Array.Copy(buff, tmpB, ind);
+            File.WriteAllBytes("ee.bin", tmpB);
         }
 
         void ImgToArr(string fn)
